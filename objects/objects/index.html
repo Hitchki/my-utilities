@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+Created on 04.10.2015
+<!--<script src="script.js"></script>-->
+
+<script>
+    var objCreate = function() {}; // Creates a new object
+
+    var obj = new objCreate();
+
+    // Example of an object property added with defineProperty with a data property descriptor
+    Object.defineProperty(obj, 'bar', {
+        value: 37,
+        writable: true,
+        enumerable: false,
+        configurable: true
+    });
+
+    objCreate.prototype.protoAttr = 'valueOfProtoAttr';
+
+    var d = Object.getOwnPropertyDescriptor(obj, 'bar');
+    console.log('Object.getOwnPropertyDescriptor(o.a)', d);
+
+    console.log("obj.hasOwnProperty('bar')", obj.hasOwnProperty('bar'));
+    console.log("'bar' in obj", 'bar' in obj);
+
+    for (key in obj) {
+        console.log('for-loop', key, obj[key]);
+    }
+    console.log('keys', Object.keys(obj));
+
+    console.log('getOwnPropertyNames', Object.getOwnPropertyNames(obj));
+    console.log('franz: ', obj.bar);
+
+</script>
+
+</body>
+</html>

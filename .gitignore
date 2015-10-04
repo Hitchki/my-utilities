@@ -1,0 +1,6 @@
+# temp directory ignorieren
+/temp
+
+/objects/node_modules
+
+/objects/objects/junk.html
